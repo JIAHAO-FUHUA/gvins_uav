@@ -1,0 +1,16 @@
+evo_traj tum --ref=odometry_gnss.txt odometry_vio.txt enu_result.txt -pa --t_max_diff=0.1
+evo_traj tum --ref=odometry_gnss.txt odometry_vio.txt gnss_imu.txt -pa --t_max_diff=0.1
+
+evo_traj tum --ref=odometry.txt vicon_pose.txt -pa --t_max_diff=0.1
+
+evo_traj tum --ref=vicon_pose.txt odometry.txt -pa --t_max_diff=0.1
+
+evo_traj tum --ref=vicon_pose.txt odometry_imu.txt -pa --t_max_diff=0.1
+
+evo_ape tum vicon_pose.txt odometry.txt -pa --t_max_diff=0.1
+
+evo_ape tum vicon_pose.txt odometry_imu.txt -pa --t_max_diff=0.1
+
+evo_ape tum odometry_gnss.txt gnss_imu.txt -pa --t_max_diff=0.1
+
+evo_ape tum odometry_gnss.txt odometry_vio.txt -pa --t_max_diff=0.1
